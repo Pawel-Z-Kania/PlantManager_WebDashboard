@@ -1,0 +1,13 @@
+<div>
+    Przykładowy component:
+
+    <button (click)="fetchPotsData()"> Download API data </button>
+
+    @if(rawPotsData()){
+        <pre>{{rawPotsData() | json}}</pre>
+    } @else {
+        <p> No data! Check console</p>
+    }
+
+
+</div>
