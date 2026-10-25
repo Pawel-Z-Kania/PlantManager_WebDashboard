@@ -1,0 +1,14 @@
+.pot-list{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+.pot-card {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    background-color: var(--color-primary-light);
+}

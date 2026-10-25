@@ -7,22 +7,25 @@ import { Pot } from "../../models/pot.model";
 @Component({
     selector: 'pot-list',
     standalone: true,
-    imports: [CommonModule],
-    templateUrl: './pots.component.html'
+    imports: [
+        CommonModule
+    ],
+    templateUrl: './pots.component.html',
+    styleUrl: './pots.component.scss'
 })
 
 export class PotListComponent implements OnInit {
     private potsService = inject(PotsService);
-    rawPotsData = signal<Pot[] | null>(null);
+    potList = signal<Pot[] | null>(null);
 
     ngOnInit(): void {
-        console.log('Component loaded');
+        this.fetchPotsData();
     }
 
     fetchPotsData(): void {
         this.potsService.getPots().subscribe({
             next: (response) => {
-                this.rawPotsData.set(response)
+                this.potList.set(response)
                 console.log('Data loaded ', response);
             },
             error: (err) => {

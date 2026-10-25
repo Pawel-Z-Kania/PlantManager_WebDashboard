@@ -1,13 +1,16 @@
 <div>
-    Przykładowy component:
-
     <button (click)="fetchPotsData()"> Download API data </button>
 
-    @if(rawPotsData()){
-        <pre>{{rawPotsData() | json}}</pre>
-    } @else {
-        <p> No data! Check console</p>
-    }
+    <div class="pot-list">
+        @for (pot of potList(); track $index) {
+        <div class="pot-card">
+            {{pot.name}}
+        </div>
+        }
+        @empty {
+        <div>There are no pots</div>
+        }
+    </div>
 
 
 </div>

@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'styles/variables.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  color-scheme: light;
+
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-primary-font);
+
+  margin: 0;
+  height: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

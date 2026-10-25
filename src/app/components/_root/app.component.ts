@@ -3,10 +3,12 @@ import { PotListComponent } from '../pots/pots.component';
 
 @Component({
   selector: 'app-root',
-  styleUrl: './app.component.scss',
-  imports: [PotListComponent],
-  templateUrl: './app.component.html'
+  imports: [
+    PotListComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
 export class App {
-  protected readonly title = signal('HTTP_API_fetch()');
+  protected readonly title = signal('Plant_lst');
 }
