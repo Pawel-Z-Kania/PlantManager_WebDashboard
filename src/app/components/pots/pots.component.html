@@ -1,11 +1,34 @@
 <div>
-    <button (click)="fetchPotsData()"> Download API data </button>
-
     <div class="pot-list">
         @for (pot of potList(); track $index) {
+
+        <!-- START: POT CARD -->
         <div class="pot-card">
-            {{pot.name}}
+            <div class="pot-plant-type-icon"
+                 role="img"
+                 [attr.aria-label]="'Plant type: ' + pot.plant_type">
+                <span aria-hidden="true">
+                    ?
+                </span>
+            </div>
+            <div class="pot-content">
+                <div class="pot-title">
+                    {{pot.name}}
+                </div>
+                <div class="pot-alerts">
+                    @for (alert of pot.alerts; track $index) {
+                    <div class="pot-alert-card">
+                        {{alert.label}}
+                    </div>
+                    }
+                </div>
+            </div>
+            <span class="material-symbols-outlined">
+                table_chart_view
+            </span>
         </div>
+        <!-- END: POT CARD -->
+
         }
         @empty {
         <div>There are no pots</div>

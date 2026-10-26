@@ -1,8 +1,8 @@
-.pot-list{
+.pot-list {
     display: flex;
     flex-direction: column;
-    padding: 10px;
     gap: 10px;
+    margin-right: 10px;
 }
 
 .pot-card {
@@ -10,5 +10,50 @@
     padding: 10px;
     border-radius: 5px;
     display: flex;
+    align-items: flex-start;
+    gap: 12px;
     background-color: var(--color-primary-light);
+}
+
+.pot-plant-type-icon {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.pot-content {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pot-title {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.pot-alerts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pot-alert-card {
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-font);
+    font-size: 0.875rem;
 }

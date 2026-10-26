@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { PotListComponent } from '../pots/pots.component';
+import { PotDetailsComponent } from '../potDetails/potDetails.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    PotListComponent
+    PotListComponent,
+    PotDetailsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

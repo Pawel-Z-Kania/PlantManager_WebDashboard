@@ -26,7 +26,7 @@ export class PotListComponent implements OnInit {
         this.potsService.getPots().subscribe({
             next: (response) => {
                 this.potList.set(response)
-                console.log('Data loaded ', response);
+                //    console.log('Data loaded ', response);
             },
             error: (err) => {
                 console.error('Data not loaded properly', err);
