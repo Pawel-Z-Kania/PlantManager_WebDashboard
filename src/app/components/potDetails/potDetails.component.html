@@ -1,3 +1,68 @@
 <div class="main-div">
+    @if (potsService.selectedPot(); as pot) {
+    <div class="pot-details-content">
+        <div class="pot-details-title">
+            {{pot.name}}
+        </div>
 
+
+        <div class="measurements">
+            @for (measurement of pot.pot_measurements; track $index) {
+            {{measurement.sensor_value}}
+            }
+        </div>
+
+        {{pot.battery_mv}}
+
+        <div class="pot-details-dates">
+            <div class="pot-details-content-grid">
+                <span class="pot-details-date-label">
+                    Plant type
+                </span>
+                <span class="pot-details-dates-date">
+                    {{pot.plant_type}}
+                </span>
+
+                <span class="pot-details-date-label">
+                    Board id:
+                </span>
+                <span class="pot-details-dates-date">
+                    {{pot.board_id}}
+                </span>
+
+                <span class="pot-details-date-label">
+                    Last watering date:
+                </span>
+                <span class="pot-details-dates-date">
+                    {{pot.last_watered_at | date: 'dd.MM.yyyy, HH:mm'}}
+                </span>
+
+                <span class="pot-details-date-label">
+                    Next watering date:
+                </span>
+                <span class="pot-details-dates-date">
+                    {{pot.next_watered_date | date: 'dd.MM.yyyy, HH:mm'}}
+                </span>
+
+                <span class="pot-details-date-label">
+                    Last signal time:
+                </span>
+
+                <span class="pot-details-dates-date">
+                    {{pot.last_signal_time| date: 'dd.MM.yyyy, HH:mm'}}
+                </span>
+
+                {{pot.dry_calibration_value}}
+                {{pot.wet_calibration_value}}
+                {{pot.interval_minutes}}
+
+            </div>
+        </div>
+        <div class="pot-details-alerts">
+            @for (alert of pot.alerts; track $index) {
+            {{alert.label}}
+            }
+        </div>
+    </div>
+    }
 </div>

@@ -1,9 +1,11 @@
 <div>
     <div class="pot-list">
-        @for (pot of potList(); track $index) {
+        @for (pot of potsService.pots(); track $index) {
 
         <!-- START: POT CARD -->
-        <div class="pot-card">
+        <div class="pot-card"
+             [ngClass]="{'pot-card-selected': pot.id === potsService.selectedPot()?.id}"
+             (click)="onSelect(pot.id)">
             <div class="pot-plant-type-icon"
                  role="img"
                  [attr.aria-label]="'Plant type: ' + pot.plant_type">
@@ -23,7 +25,7 @@
                     }
                 </div>
             </div>
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined button-icon">
                 table_chart_view
             </span>
         </div>
