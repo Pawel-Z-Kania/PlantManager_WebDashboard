@@ -4,7 +4,8 @@
 
 <div class="application-content">
   <pot-list></pot-list>
-  <div class="pot-details">
+  <div #detailsPanel class="pot-details" [style.--details-width]="detailsWidthCss()">
+    <app-component-splitter (resized)="onDetailsResized($event)" (reset)="onDetailsReset()"></app-component-splitter>
     <pot-details></pot-details>
   </div>
 </div>

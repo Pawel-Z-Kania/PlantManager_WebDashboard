@@ -1,8 +1,6 @@
 import { Component, inject, OnInit, signal } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { PotsService } from "../../services/pots.service";
-import { error } from "console";
-import { Pot } from "../../models/pot.model";
 
 @Component({
     selector: 'pot-list',

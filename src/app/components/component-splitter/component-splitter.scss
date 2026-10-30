@@ -1,0 +1,31 @@
+:host {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    cursor: col-resize;
+    touch-action: none;
+    outline: none;
+    z-index: 1;
+}
+
+.bar {
+    width: 3px;
+    height: 100%;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: background-color 0.15s;
+}
+
+:host(:hover) .bar,
+:host(:focus-visible) .bar {
+    background-color: var(--color-primary-light);
+}
+
+:host(.dragging) .bar {
+    background-color: var(--color-primary-dark);
+}

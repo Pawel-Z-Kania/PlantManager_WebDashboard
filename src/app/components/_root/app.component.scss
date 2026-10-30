@@ -9,7 +9,7 @@
 
 .application-header {
     background-color: var(--color-primary-dark);
-    height: 50px;
+    height: 70px;
     display: flex;
     flex: 0 0 auto;
     justify-content: center;
@@ -25,12 +25,9 @@
     padding: 10px;
 }
 
-pot-list {
-    flex: 1 1 60%;
-    min-width: 0;
-}
-
 .pot-details {
-    flex: 0 0 40%;
-    min-width: 0;
+    position: relative;
+    flex: 0 0 var(--details-width, 40%);
+    min-width: 320px;
+    max-width: calc(100% - 320px);
 }
